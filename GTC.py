@@ -101,25 +101,25 @@ class Car(pg.sprite.Sprite):
         screen.blit(self.image, self.rect)
 
 
-# class Enemy(pg.sprite.Sprite):
-#     """
-#     出現する敵のクラス
-#     ランダムで出現するなどの処理は今後実装する
-#     """
-#     def __init__(self):
-#         super().__init__()
-#         self.image = pg.image.load(f"fig/enemy.png")
-#         self.image = pg.transform.scale(self.image, (150, 100))
-#         self.image = pg.transform.flip(self.image, True, False)
-#         self.rect = self.image.get_rect()
-#         self.rect.x = 800
-#         self.rect.y = random.randint(0, 600-50)
-#         self.speed = 2
+class Enemy(pg.sprite.Sprite):
+    """
+    出現する敵のクラス
+    ランダムで出現するなどの処理は今後実装する
+    """
+    def __init__(self):
+        super().__init__()
+        self.image = pg.image.load(f"fig/enemy.png")
+        self.image = pg.transform.scale(self.image, (150, 100))
+        self.image = pg.transform.flip(self.image, True, False)
+        self.rect = self.image.get_rect()
+        self.rect.x = 800
+        self.rect.y = random.randint(0, 600-50)
+        self.speed = 2
     
-#     def update(self):
-#         self.rect.move_ip(-self.speed, 0)
-#         if self.rect.right < 0:
-#             self.kill()
+    def update(self):
+        self.rect.move_ip(-self.speed, 0)
+        if self.rect.right < 0:
+            self.kill()
 
 
 class Item(pg.sprite.Sprite):
